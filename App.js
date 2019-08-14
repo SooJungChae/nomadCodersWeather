@@ -25,15 +25,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
-	loading: {
-  	flex: 1,
-  	backgroundColor: "#FDF6AA",
-		justifyContent: "flex-end",
-		paddingLeft: 25,
-		paddingRight: 25
-	},
-	loadingText: {
-  	fontSize: 38,
-		marginBottom: 100
-	}
+  loading: {
+    flex: 1,
+    backgroundColor: "#FDF6AA",
+    justifyContent: "flex-end",
+    paddingLeft: 25,
+    paddingRight: 25
+  },
+  loadingText: {
+    fontSize: 38,
+    marginBottom: 100
+  }
 });
