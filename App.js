@@ -4,7 +4,8 @@ import Weather from './Weather';
 
 export default class App extends Component {
   state = {
-    isLoaded: false
+    isLoaded: false,
+    error: null
   };
 
   componentDidMount () {
@@ -15,19 +16,22 @@ export default class App extends Component {
           });
         },
         error => {
-          console.log(error);
+          this.setState({
+            error: error
+          });
         }
     )
-  }
+  };
 
   render () {
-    const { isLoaded } = this.state;
+    const { isLoaded, error } = this.state;
     return (
         <View style={styles.container}>
           <StatusBar hidden={true}/>
           {isLoaded ? <Weather/> : (
               <View style={styles.loading}>
                 <Text style={styles.loadingText}>Getting the weather</Text>
+                { error ? <Text style={styles.errorText}>{error}</Text> : null }
               </View>
           )}
         </View>
@@ -50,5 +54,10 @@ const styles = StyleSheet.create({
   loadingText: {
     fontSize: 38,
     marginBottom: 100
+  },
+  errorText: {
+    color: "red",
+    backgroundColor: "transparent",
+    marginBottom: 40
   }
 });
