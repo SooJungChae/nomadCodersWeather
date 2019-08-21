@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from "@expo/vector-icons";
 
 export default class Weather extends Component {
   render () {
@@ -10,7 +11,9 @@ export default class Weather extends Component {
             style={styles.container}
         >
           <View style={styles.upper}>
-            <Text>Icon here!</Text>
+            <Text>
+              <Ionicons name="md-rainy" size={100} color="white"  />
+            </Text>
             <Text style={styles.temp}>35</Text>
           </View>
           <View style={styles.lower}>
